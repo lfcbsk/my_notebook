@@ -1,11 +1,14 @@
 name: Test Every 2 Minutes
 
+
 on:
+  schedule:
+    - cron: '*/5 * * * *'
   push:
     branches: [ main ]
-  schedule:
-    - cron: '*/5 * * * *'  # Chạy mỗi 2 phút
-  workflow_dispatch:       # Cho phép chạy thủ công
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   test:
