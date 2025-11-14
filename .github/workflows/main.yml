@@ -2,7 +2,7 @@ name: Test Every 2 Minutes
 
 on:
   schedule:
-    - cron: '*/2 * * * *'  # Chạy mỗi 2 phút
+    - cron: '*/5 * * * *'  # Chạy mỗi 2 phút
   workflow_dispatch:       # Cho phép chạy thủ công
 
 jobs:
