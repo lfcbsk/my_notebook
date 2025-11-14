@@ -1,0 +1,23 @@
+name: Scheduled Job Every 15 Minutes
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'  # Phút 0, 15, 30, 45 mỗi giờ
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scheduled-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Run scheduled task
+        run: |
+          echo "🎉 SCHEDULED RUN SUCCESS!"
+          echo "🕐 Time: $(date +'%Y-%m-%d %H:%M:%S')"
+          echo "📈 Random number: $(( RANDOM % 1000 ))"
+          echo "✅ This proves scheduled workflows work!"
