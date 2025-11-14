@@ -1,0 +1,20 @@
+name: Test Every 2 Minutes
+
+on:
+  schedule:
+    - cron: '*/2 * * * *'  # Chạy mỗi 2 phút
+  workflow_dispatch:       # Cho phép chạy thủ công
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print current time and workflow info
+        run: |
+          echo "✅ Workflow is running!"
+          date
+          echo "📍 Current directory:"
+          pwd
+          echo "📋 Environment info:"
+          env | grep GITHUB
+          echo "✅ Test completed."
