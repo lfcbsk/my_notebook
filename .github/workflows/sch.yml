@@ -2,7 +2,7 @@ name: Scheduled Job Every 15 Minutes
 
 on:
   schedule:
-    - cron: '*/10 * * * *'  # Phút 0, 15, 30, 45 mỗi giờ
+    - cron: '*/15 * * * *'  # Phút 0, 15, 30, 45 mỗi giờ
   workflow_dispatch:
 
 permissions:
